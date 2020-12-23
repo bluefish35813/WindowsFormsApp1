@@ -32,6 +32,10 @@ namespace WindowsFormsApp1
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.resbutton = new System.Windows.Forms.Button();
+            this.pabutton = new System.Windows.Forms.Button();
+            this.nlevel = new System.Windows.Forms.Button();
+            this.wlabel = new System.Windows.Forms.Label();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
@@ -63,7 +67,8 @@ namespace WindowsFormsApp1
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.wlabel = new System.Windows.Forms.Label();
+            this.levlabel = new System.Windows.Forms.Label();
+            this.lnumlab = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
@@ -100,6 +105,11 @@ namespace WindowsFormsApp1
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lnumlab);
+            this.panel1.Controls.Add(this.levlabel);
+            this.panel1.Controls.Add(this.resbutton);
+            this.panel1.Controls.Add(this.pabutton);
+            this.panel1.Controls.Add(this.nlevel);
             this.panel1.Controls.Add(this.wlabel);
             this.panel1.Controls.Add(this.pictureBox19);
             this.panel1.Controls.Add(this.pictureBox20);
@@ -136,6 +146,46 @@ namespace WindowsFormsApp1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1505, 997);
             this.panel1.TabIndex = 3;
+            // 
+            // resbutton
+            // 
+            this.resbutton.Location = new System.Drawing.Point(550, 33);
+            this.resbutton.Name = "resbutton";
+            this.resbutton.Size = new System.Drawing.Size(188, 50);
+            this.resbutton.TabIndex = 34;
+            this.resbutton.Text = "Resume";
+            this.resbutton.UseVisualStyleBackColor = true;
+            this.resbutton.Click += new System.EventHandler(this.resbutton_Click);
+            // 
+            // pabutton
+            // 
+            this.pabutton.Location = new System.Drawing.Point(550, 35);
+            this.pabutton.Name = "pabutton";
+            this.pabutton.Size = new System.Drawing.Size(188, 46);
+            this.pabutton.TabIndex = 33;
+            this.pabutton.Text = "Pause";
+            this.pabutton.UseVisualStyleBackColor = true;
+            this.pabutton.Click += new System.EventHandler(this.pabutton_Click);
+            // 
+            // nlevel
+            // 
+            this.nlevel.Location = new System.Drawing.Point(799, 28);
+            this.nlevel.Name = "nlevel";
+            this.nlevel.Size = new System.Drawing.Size(188, 55);
+            this.nlevel.TabIndex = 32;
+            this.nlevel.Text = "Next Level";
+            this.nlevel.UseVisualStyleBackColor = true;
+            this.nlevel.Click += new System.EventHandler(this.nlevel_Click);
+            // 
+            // wlabel
+            // 
+            this.wlabel.AutoSize = true;
+            this.wlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wlabel.Location = new System.Drawing.Point(281, 33);
+            this.wlabel.Name = "wlabel";
+            this.wlabel.Size = new System.Drawing.Size(208, 55);
+            this.wlabel.TabIndex = 31;
+            this.wlabel.Text = "You win!";
             // 
             // pictureBox19
             // 
@@ -379,9 +429,9 @@ namespace WindowsFormsApp1
             // 
             // rbutton
             // 
-            this.rbutton.Location = new System.Drawing.Point(563, 33);
+            this.rbutton.Location = new System.Drawing.Point(550, 31);
             this.rbutton.Name = "rbutton";
-            this.rbutton.Size = new System.Drawing.Size(147, 55);
+            this.rbutton.Size = new System.Drawing.Size(186, 55);
             this.rbutton.TabIndex = 5;
             this.rbutton.Text = "Restart";
             this.rbutton.UseVisualStyleBackColor = true;
@@ -438,15 +488,25 @@ namespace WindowsFormsApp1
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // wlabel
+            // levlabel
             // 
-            this.wlabel.AutoSize = true;
-            this.wlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wlabel.Location = new System.Drawing.Point(281, 33);
-            this.wlabel.Name = "wlabel";
-            this.wlabel.Size = new System.Drawing.Size(208, 55);
-            this.wlabel.TabIndex = 31;
-            this.wlabel.Text = "You win!";
+            this.levlabel.AutoSize = true;
+            this.levlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.levlabel.Location = new System.Drawing.Point(291, 33);
+            this.levlabel.Name = "levlabel";
+            this.levlabel.Size = new System.Drawing.Size(139, 55);
+            this.levlabel.TabIndex = 35;
+            this.levlabel.Text = "Level";
+            // 
+            // lnumlab
+            // 
+            this.lnumlab.AutoSize = true;
+            this.lnumlab.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnumlab.Location = new System.Drawing.Point(427, 33);
+            this.lnumlab.Name = "lnumlab";
+            this.lnumlab.Size = new System.Drawing.Size(51, 55);
+            this.lnumlab.TabIndex = 36;
+            this.lnumlab.Text = "1";
             // 
             // Form1
             // 
@@ -526,6 +586,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label wlabel;
+        private System.Windows.Forms.Button nlevel;
+        private System.Windows.Forms.Button pabutton;
+        private System.Windows.Forms.Button resbutton;
+        private System.Windows.Forms.Label levlabel;
+        private System.Windows.Forms.Label lnumlab;
     }
 }
 
